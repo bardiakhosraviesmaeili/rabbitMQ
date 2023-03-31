@@ -9,6 +9,7 @@ print('Waiting for message, press ctrl+c to exit')
 
 def callback(ch, method, properties, body):
     print(f'Received {body}')
+    print(properties.headers)
     time.sleep(9)
     print('Done')
     ch.basic_ack(delivery_tag=method.delivery_tag)
