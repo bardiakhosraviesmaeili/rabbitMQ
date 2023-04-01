@@ -3,7 +3,7 @@ import pika
 connection = pika.BlockingConnection(pika.ConnectionParameters(host='localhost'))
 ch = connection.channel()
 
-ch.exchange_declare(exchange='topic_logs', exchange_type='direct')
+ch.exchange_declare(exchange='topic_logs', exchange_type='topic')
 
 result = ch.queue_declare(queue='', exclusive=True)
 qname = result.method.queue
