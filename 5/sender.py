@@ -3,7 +3,7 @@ import pika
 connection = pika.BlockingConnection(pika.ConnectionParameters(host='localhost'))
 ch = connection.channel()
 
-ch.exchange_declare(exchange='topic_logs', exchange_type='direct')
+ch.exchange_declare(exchange='topic_logs', exchange_type='topic')
 
 messages = {
     'info.debug.notimportant': 'this is not important message',
